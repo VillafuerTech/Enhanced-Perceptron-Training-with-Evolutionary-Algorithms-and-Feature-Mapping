@@ -109,9 +109,7 @@ class TestGeneticAlgorithmOptimizer:
         X, y = linear_data
         optimizer = GeneticAlgorithmOptimizer()
 
-        weights, bias, history = optimizer.fit(
-            X, y, generations=5, population_size=20, seed=42
-        )
+        weights, bias, history = optimizer.fit(X, y, generations=5, population_size=20, seed=42)
 
         assert isinstance(weights, np.ndarray)
         assert weights.shape == (X.shape[1],)
@@ -207,9 +205,7 @@ class TestOptimizersOnNonlinearData:
     """Test all optimizers can handle 3D transformed data."""
 
     @pytest.mark.parametrize("optimizer_name", ["sequential", "batch", "ga", "gwo"])
-    def test_optimizer_on_3d_data(
-        self, nonlinear_data: tuple, optimizer_name: str
-    ) -> None:
+    def test_optimizer_on_3d_data(self, nonlinear_data: tuple, optimizer_name: str) -> None:
         """All optimizers work with 3D feature-mapped data."""
         X, y = nonlinear_data
         optimizer = get_optimizer(optimizer_name)
@@ -219,13 +215,9 @@ class TestOptimizersOnNonlinearData:
         elif optimizer_name == "batch":
             weights, bias, history = optimizer.fit(X, y, epochs=5, seed=42)
         elif optimizer_name == "ga":
-            weights, bias, history = optimizer.fit(
-                X, y, generations=5, population_size=20, seed=42
-            )
+            weights, bias, history = optimizer.fit(X, y, generations=5, population_size=20, seed=42)
         else:  # gwo
-            weights, bias, history = optimizer.fit(
-                X, y, epochs=5, n_wolves=10, seed=42
-            )
+            weights, bias, history = optimizer.fit(X, y, epochs=5, n_wolves=10, seed=42)
 
         assert weights.shape == (3,)  # 3D after transform
         assert isinstance(bias, float)

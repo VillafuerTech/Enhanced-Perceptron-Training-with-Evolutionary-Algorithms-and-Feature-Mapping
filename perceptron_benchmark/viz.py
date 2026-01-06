@@ -54,9 +54,7 @@ def plot_decision_boundary_2d(
     ax.contour(xx, yy, Z, colors="k", linewidths=0.5)
 
     # Plot data points
-    scatter = ax.scatter(
-        X[:, 0], X[:, 1], c=y, cmap=plt.cm.RdBu, edgecolor="k", s=50
-    )
+    scatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap=plt.cm.RdBu, edgecolor="k", s=50)
 
     ax.set_title(title)
     ax.set_xlabel("Feature 1")
@@ -137,8 +135,12 @@ def plot_decision_plane_3d(
     from matplotlib.lines import Line2D
 
     legend_elements = [
-        Line2D([0], [0], marker="o", color="w", markerfacecolor="blue", markersize=10, label="Class 0"),
-        Line2D([0], [0], marker="o", color="w", markerfacecolor="red", markersize=10, label="Class 1"),
+        Line2D(
+            [0], [0], marker="o", color="w", markerfacecolor="blue", markersize=10, label="Class 0"
+        ),
+        Line2D(
+            [0], [0], marker="o", color="w", markerfacecolor="red", markersize=10, label="Class 1"
+        ),
     ]
     ax.legend(handles=legend_elements, loc="upper left")
 
@@ -291,8 +293,12 @@ def plot_data_3d(
     from matplotlib.lines import Line2D
 
     legend_elements = [
-        Line2D([0], [0], marker="o", color="w", markerfacecolor="blue", markersize=10, label="Class 0"),
-        Line2D([0], [0], marker="o", color="w", markerfacecolor="red", markersize=10, label="Class 1"),
+        Line2D(
+            [0], [0], marker="o", color="w", markerfacecolor="blue", markersize=10, label="Class 0"
+        ),
+        Line2D(
+            [0], [0], marker="o", color="w", markerfacecolor="red", markersize=10, label="Class 1"
+        ),
     ]
     ax.legend(handles=legend_elements, loc="upper left")
 

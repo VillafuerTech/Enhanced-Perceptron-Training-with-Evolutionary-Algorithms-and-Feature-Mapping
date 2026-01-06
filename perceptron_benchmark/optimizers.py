@@ -234,9 +234,7 @@ class GeneticAlgorithmOptimizer(BaseOptimizer):
         chromosome_length = n_features + 1  # weights + bias
 
         # Initialize population
-        population = [
-            np.random.uniform(-1, 1, chromosome_length) for _ in range(population_size)
-        ]
+        population = [np.random.uniform(-1, 1, chromosome_length) for _ in range(population_size)]
 
         best_individual = None
         best_fitness = float("inf")

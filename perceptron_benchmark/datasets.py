@@ -229,12 +229,14 @@ def _generate_xor(n_samples: int) -> tuple[np.ndarray, np.ndarray]:
     X_q4[:, 1] = np.random.uniform(-2, -0.5, n_per_quadrant)
 
     X = np.vstack([X_q1, X_q2, X_q3, X_q4])
-    y = np.hstack([
-        np.ones(n_per_quadrant),   # Q1: class 1
-        np.ones(n_per_quadrant),   # Q2: class 1
-        np.zeros(n_per_quadrant),  # Q3: class 0
-        np.zeros(n_per_quadrant),  # Q4: class 0
-    ])
+    y = np.hstack(
+        [
+            np.ones(n_per_quadrant),  # Q1: class 1
+            np.ones(n_per_quadrant),  # Q2: class 1
+            np.zeros(n_per_quadrant),  # Q3: class 0
+            np.zeros(n_per_quadrant),  # Q4: class 0
+        ]
+    )
 
     shuffle_idx = np.random.permutation(len(y))
     return X[shuffle_idx], y[shuffle_idx].astype(int)

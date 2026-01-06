@@ -173,14 +173,20 @@ def run_single_experiment(
         # Decision boundary/plane
         if meta.n_features == 2:
             plot_decision_boundary_2d(
-                X, y, weights, bias,
+                X,
+                y,
+                weights,
+                bias,
                 title=f"{optimizer_name.upper()} - {dataset_name}",
                 save_path=figures_dir / "decision_boundary.png",
                 show=show,
             )
         elif meta.n_features == 3:
             plot_decision_plane_3d(
-                X, y, weights, bias,
+                X,
+                y,
+                weights,
+                bias,
                 title=f"{optimizer_name.upper()} - {dataset_name}",
                 save_path=figures_dir / "decision_plane.png",
                 show=show,
@@ -231,7 +237,9 @@ def run_repeated_experiments(
         seed = base_seed + i
         kwargs = {**base_optimizer_kwargs, "seed": seed}
 
-        print(f"\n[{i + 1}/{n_repeats}] Running {optimizer_name} on {dataset_name} (seed={seed})...")
+        print(
+            f"\n[{i + 1}/{n_repeats}] Running {optimizer_name} on {dataset_name} (seed={seed})..."
+        )
 
         result = run_single_experiment(
             dataset_name=dataset_name,

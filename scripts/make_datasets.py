@@ -99,27 +99,33 @@ def generate_xor_dataset(n_samples: int, seed: int) -> tuple[np.ndarray, np.ndar
     X_q1 = np.random.uniform(0.5, 2, (n_per_quadrant, 2))
 
     # Q2 (-+): class 0
-    X_q2 = np.column_stack([
-        np.random.uniform(-2, -0.5, n_per_quadrant),
-        np.random.uniform(0.5, 2, n_per_quadrant),
-    ])
+    X_q2 = np.column_stack(
+        [
+            np.random.uniform(-2, -0.5, n_per_quadrant),
+            np.random.uniform(0.5, 2, n_per_quadrant),
+        ]
+    )
 
     # Q3 (--): class 1
     X_q3 = np.random.uniform(-2, -0.5, (n_per_quadrant, 2))
 
     # Q4 (+-): class 0
-    X_q4 = np.column_stack([
-        np.random.uniform(0.5, 2, n_per_quadrant),
-        np.random.uniform(-2, -0.5, n_per_quadrant),
-    ])
+    X_q4 = np.column_stack(
+        [
+            np.random.uniform(0.5, 2, n_per_quadrant),
+            np.random.uniform(-2, -0.5, n_per_quadrant),
+        ]
+    )
 
     X = np.vstack([X_q1, X_q2, X_q3, X_q4])
-    y = np.hstack([
-        np.ones(n_per_quadrant),   # Q1
-        np.zeros(n_per_quadrant),  # Q2
-        np.ones(n_per_quadrant),   # Q3
-        np.zeros(n_per_quadrant),  # Q4
-    ])
+    y = np.hstack(
+        [
+            np.ones(n_per_quadrant),  # Q1
+            np.zeros(n_per_quadrant),  # Q2
+            np.ones(n_per_quadrant),  # Q3
+            np.zeros(n_per_quadrant),  # Q4
+        ]
+    )
 
     # Shuffle
     idx = np.random.permutation(len(y))
