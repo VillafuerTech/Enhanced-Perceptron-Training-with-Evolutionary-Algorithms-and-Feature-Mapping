@@ -437,7 +437,7 @@ def main(argv: list[str] | None = None) -> int:
 
     try:
         if args.repeat > 1:
-            results = run_repeated_experiments(
+            run_repeated_experiments(
                 dataset_name=args.dataset,
                 optimizer_name=args.optimizer,
                 base_optimizer_kwargs=optimizer_kwargs,
