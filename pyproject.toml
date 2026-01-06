@@ -59,6 +59,9 @@ include = ["perceptron_benchmark*"]
 [tool.ruff]
 target-version = "py39"
 line-length = 100
+extend-exclude = ["reports", "Datasets"]
+
+[tool.ruff.lint]
 select = [
     "E",      # pycodestyle errors
     "W",      # pycodestyle warnings
@@ -73,10 +76,10 @@ ignore = [
     "B008",   # do not perform function calls in argument defaults
 ]
 
-[tool.ruff.per-file-ignores]
+[tool.ruff.lint.per-file-ignores]
 "tests/*" = ["B", "C4"]
 
-[tool.ruff.isort]
+[tool.ruff.lint.isort]
 known-first-party = ["perceptron_benchmark"]
 
 # Black configuration

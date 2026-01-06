@@ -23,13 +23,7 @@ from perceptron_benchmark.io import (
 )
 from perceptron_benchmark.metrics import compute_metrics
 from perceptron_benchmark.models import Perceptron
-from perceptron_benchmark.optimizers import (
-    BatchOptimizer,
-    GeneticAlgorithmOptimizer,
-    GreyWolfOptimizer,
-    SequentialOptimizer,
-    get_optimizer,
-)
+from perceptron_benchmark.optimizers import get_optimizer
 from perceptron_benchmark.viz import (
     plot_decision_boundary_2d,
     plot_decision_plane_3d,
