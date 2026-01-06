@@ -5,10 +5,10 @@ import pytest
 
 from perceptron_benchmark.datasets import (
     DatasetMeta,
-    generate_dataset,
     _apply_nonlinear_transform,
     _apply_xor_transform,
     _ensure_binary_labels,
+    generate_dataset,
 )
 
 

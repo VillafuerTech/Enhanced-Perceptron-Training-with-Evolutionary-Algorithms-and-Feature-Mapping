@@ -429,8 +429,8 @@ def main(argv: list[str] | None = None) -> int:
     # Build optimizer kwargs
     optimizer_kwargs = build_optimizer_kwargs(args, args.optimizer)
 
-    print(f"Perceptron Benchmark")
-    print(f"=" * 40)
+    print("Perceptron Benchmark")
+    print("=" * 40)
     print(f"Dataset: {args.dataset}")
     print(f"Optimizer: {args.optimizer}")
     print(f"Seed: {args.seed}")
@@ -462,7 +462,7 @@ def main(argv: list[str] | None = None) -> int:
                 tag=args.tag,
                 generate_data=args.generate,
             )
-            print(f"\nResults:")
+            print("\nResults:")
             print(f"  Accuracy: {result['final_accuracy']:.4f}")
             print(f"  Errors: {result['final_error_count']}")
             print(f"  Runtime: {result['runtime_seconds']:.4f}s")
