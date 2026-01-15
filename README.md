@@ -19,15 +19,27 @@ A benchmark tool for comparing perceptron training algorithms including classica
 git clone https://github.com/yourusername/perceptron-optimizers-benchmark.git
 cd perceptron-optimizers-benchmark
 
-# Install dependencies
-pip install -r requirements.txt
-
-# Or install as editable package (recommended)
+# Install the package (recommended)
 pip install -e .
 
 # For development (includes pytest, ruff, black)
 pip install -e ".[dev]"
 ```
+
+### Dependencies
+
+All dependencies are managed in `pyproject.toml`:
+
+**Core dependencies:**
+- `numpy>=1.21.0` - Numerical computing
+- `pandas>=1.3.0` - Data manipulation
+- `matplotlib>=3.4.0` - Visualization
+
+**Development dependencies** (installed with `.[dev]`):
+- `pytest>=7.0.0` - Testing framework
+- `pytest-cov>=4.0.0` - Coverage reporting
+- `ruff>=0.1.0` - Fast Python linter
+- `black>=23.0.0` - Code formatter
 
 ## Quickstart
 
@@ -342,8 +354,7 @@ Example figure placeholders (replace with actual figures after running):
 │   └── test_optimizers_smoke.py
 ├── Datasets/                # CSV data files
 ├── reports/                 # Generated outputs (gitignored)
-├── pyproject.toml           # Project configuration
-├── requirements.txt         # Dependencies
+├── pyproject.toml           # Project configuration and dependencies
 ├── LICENSE                  # MIT License
 └── README.md
 ```
