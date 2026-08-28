@@ -16,8 +16,8 @@ A benchmark tool for comparing perceptron training algorithms including classica
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/perceptron-optimizers-benchmark.git
-cd perceptron-optimizers-benchmark
+git clone https://github.com/VillaforTech/Perceptron-Optimizer-Benchmark.git
+cd Perceptron-Optimizer-Benchmark
 
 # Install the package (recommended)
 pip install -e .
@@ -370,8 +370,8 @@ If you use this benchmark tool in your research, please cite:
 ```bibtex
 @software{perceptron_optimizers_benchmark,
   title = {Perceptron Optimizers Benchmark},
-  year = {2024},
-  url = {https://github.com/yourusername/perceptron-optimizers-benchmark}
+  year = {2025},
+  url = {https://github.com/VillaforTech/Perceptron-Optimizer-Benchmark}
 }
 ```
 
